@@ -1,0 +1,16 @@
+.div {
+    text-align: center;
+    font-size: 2em;
+    color: #00b899;
+}
+
+.link {
+    color: #00b899;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 4px solid currentColor;
+}
+
+.link:hover {
+    color: darkcyan;
+}

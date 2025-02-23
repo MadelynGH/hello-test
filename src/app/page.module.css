@@ -1,0 +1,29 @@
+.heading {
+    color: #00b899;
+    font-size: 3em;
+    margin-left: .6em;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+.notChecked { 
+     text-decoration: none;
+}
+
+.addTask {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.trashButton {
+    background-color: transparent;
+    color: #c72a5e;
+}
+
+.trashButton:hover {
+    background-color: transparent;
+    font-weight: bold;
+}

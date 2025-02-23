@@ -1,0 +1,67 @@
+@tailwind components;
+@tailwind utilities;
+
+*::selection {
+    color: white;
+    background-color: #00b899;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    border: 1px solid #00b899;
+    color: #00b899;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    transition-duration: 0.3s;
+    margin: 5px;
+    outline: none;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #00b899;
+    color: white;
+}
+
+input[type="checkbox"]::before {
+    transition-duration: 0.3s;
+    content: "\2714";
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+input[type="checkbox"]:hover:not(:checked)::before {
+    color: #00b899;
+}
+
+button {
+    background-color: #23e9c8;
+    color: white;
+    border: none;
+    margin: 10px;
+    font-size: 1.5em;
+    transition-duration: 0.3s;
+    outline: none;
+}
+
+button:hover {
+    background-color: #00b899;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border: 2px solid #00b899;
+    border-radius: 8px;
+    color: #00b899;
+    outline: none;
+    padding: 10px;
+    font-size: 1em;
+    transition-duration: 0.3s;
+    width: 60vw;
+}
+
+input[type="text"]:focus {
+    background-color: #bdeae2;
+}
