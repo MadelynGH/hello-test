@@ -27,3 +27,16 @@
     background-color: transparent;
     font-weight: bold;
 }
+
+@media (max-width: 474) {
+    .dropShadow {
+        box-shadow: 1px 1px 10px 1.5px #c8ebe5;
+    }
+}
+
+
+@media (min-width: 475) {
+    .dropShadow {
+        box-shadow: 2px 2px 15px 5px #c8ebe5;
+    }
+}

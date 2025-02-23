@@ -17,17 +17,21 @@ function ListItem({ title, items, updateItems }) {
 
   return (
     <div style={{
-      borderTop: (items.indexOf(title) == 0) ? "1px solid lightgray" : "none",
-      borderBottom: "1px solid lightgray",
-      padding: "5px",
+      // borderTop: (items.indexOf(title) == 0) ? "1px solid lightgray" : "none",
+      // borderBottom: "1px solid lightgray",
+      padding: "10px",
       width: "85vw",
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      margin: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
+      marginTop: "25px",
+      marginBottom: "25px",
       fontWeight: "400",
-      fontSize: "1.2em"
-    }} >
+      fontSize: "1.2em",
+      borderRadius: "25px"
+    }} className={styles.dropShadow}>
       <div>
         <input type="checkbox" checked={checked} onChange={handleChange} />
         <p style={{

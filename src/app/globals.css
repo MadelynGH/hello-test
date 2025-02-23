@@ -53,7 +53,7 @@ button:hover {
 
 input[type="text"] {
     border: 2px solid #00b899;
-    border-radius: 8px;
+    border-radius: 12px;
     color: #00b899;
     outline: none;
     padding: 10px;
