@@ -59,9 +59,12 @@ input[type="text"] {
     padding: 10px;
     font-size: 1em;
     transition-duration: 0.3s;
-    width: 60vw;
 }
 
 input[type="text"]:focus {
     background-color: #bdeae2;
+}
+
+::placeholder {
+    color: #51a093;
 }

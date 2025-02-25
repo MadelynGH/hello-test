@@ -28,6 +28,10 @@
     font-weight: bold;
 }
 
+.searchBar {
+    margin-left: 20px;
+}
+
 @media (max-width: 474) {
     .dropShadow {
         box-shadow: 1px 1px 10px 1.5px #c8ebe5;

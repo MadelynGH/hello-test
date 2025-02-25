@@ -5,7 +5,7 @@ import { useState } from "react";
 import { inter } from "./ui/fonts";
 const complete = new Audio("/complete.mp3"); 
 
-function ListItem({ title, items, updateItems }) {
+function ListItem({ title, items, updateItems, searchText }) {
   const [checked, toggle] = useState(false);
 
   function handleChange(e) {
@@ -21,7 +21,7 @@ function ListItem({ title, items, updateItems }) {
       // borderBottom: "1px solid lightgray",
       padding: "10px",
       width: "85vw",
-      display: "flex",
+      display: title.toLowerCase().indexOf(searchText.toLowerCase()) == -1 ? "none" : "flex",
       alignItems: "center",
       justifyContent: "space-between",
       marginLeft: "auto",
@@ -54,9 +54,11 @@ function AddTask({ items, updateItems }) {
 
   return (
     <div className={styles.addTask}>
-      <input type="text" value={text} onChange={e => {
+      <input type="text" placeholder="Add a task" value={text} onChange={e => {
         changeText(e.target.value);
-      }} onFocus={() => changeMessage("")} className={inter.className} />
+      }} onFocus={() => changeMessage("")} style={{
+        width: "60vw"
+      }} className={inter.className} />
 
       <button style={{
         borderRadius: "50px",
@@ -84,18 +86,29 @@ function AddTask({ items, updateItems }) {
   );
 }
 
+function SearchBar({ searchText, updateSearchText }) {
+  return (
+    <input type="text" placeholder="Search" value={searchText}
+    onChange={(e) => updateSearchText(e.target.value)} className={inter.className} style={{
+      marginLeft: "20px"
+    }} />
+  );
+}
+
 export default function App() {
   const [items, updateItems] = useState([]);
+  const [searchText, updateSearchText] = useState("");
 
   return (
     <>
       <h1 className={styles.heading}>To Do</h1>
+      <SearchBar searchText={searchText} updateSearchText={updateSearchText} />
       <div style={{
         overflow: "auto",
         height: "60vh"
       }}>
         {items.map(title => {
-          return <ListItem key={title} title={title} items={items} updateItems={updateItems} />;
+          return <ListItem key={title} title={title} items={items} updateItems={updateItems} searchText={searchText} />;
         })}
       </div>
       <AddTask items={items} updateItems={updateItems} />
